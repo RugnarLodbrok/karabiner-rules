@@ -2,13 +2,15 @@
   "title": "Windows-like",
   "rules": [
     {
-      "description": "swap left control/command keys",
+      "description": "swap control/command keys",
       "manipulators": [
         {
           "type": "basic",
           "from": {
             "key_code": "left_control",
-            "modifiers": {"optional": "any"}
+            "modifiers": {
+              "optional": "any"
+            }
           },
           "to": {
             "key_code": "left_command"
@@ -17,8 +19,22 @@
         {
           "type": "basic",
           "from": {
+            "key_code": "right_control",
+            "modifiers": {
+              "optional": "any"
+            }
+          },
+          "to": {
+            "key_code": "right_command"
+          }
+        },
+        {
+          "type": "basic",
+          "from": {
             "key_code": "left_command",
-            "modifiers": {"optional": "any"}
+            "modifiers": {
+              "optional": "any"
+            }
           },
           "to": {
             "key_code": "left_control"
@@ -255,6 +271,29 @@
             {
               "key_code": "delete_or_backspace",
               "modifiers": "option"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "ctrl+del",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "delete_forward",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ],
+              "optional": []
+            }
+          },
+          "to": [
+            {
+              "key_code": "delete_forward",
+              "modifiers": ["fn", "command"]
             }
           ]
         }
